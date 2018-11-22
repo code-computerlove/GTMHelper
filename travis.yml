@@ -1,0 +1,9 @@
+install:
+  - "npm i"
+language: node_js
+node_js:
+  - "10.13.0"
+  - "8.12.0"
+  - "6.11.1"
+script:
+  - "npm test"
