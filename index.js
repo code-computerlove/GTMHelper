@@ -25,7 +25,7 @@ export function sendPromoEvent(event, eventType, events) {
 	};
 
   dataLayerEvent.ecommerce[eventType] = {
-    promotions: [ { name, position, creative } ]
+    promotions: [ eventData ]
   };
 
   dataLayer.push(dataLayerEvent);
