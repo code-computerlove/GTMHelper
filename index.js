@@ -7,7 +7,7 @@ let config = {
 	label: 'data-ga-label',
 };
 
-export function configChange(options) {
+export function ConfigChange(options) {
 	config = { ...options };
 }
 
