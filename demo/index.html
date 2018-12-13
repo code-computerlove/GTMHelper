@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>
+			Demo
+		</title>
+		<link rel="stylesheet" href="/prism.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-size: 16px;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+				line-height: 1.4;
+				font-weight: 400;
+			}
+
+			h1 {
+				font-size: 4em;
+				line-height: 1.2;
+				font-weight: bold;
+			}
+
+			h2 {
+				font-size: 1.4em;
+				line-height: 1.2;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+
+			section {
+				background-color: aliceblue;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 80px 0;
+				width: 100%;
+			}
+
+			section:nth-child(odd) {
+				background-color: floralwhite;
+			}
+
+			section div,
+			header div {
+				max-width: 960px;
+				width: 100%;
+				padding: 20px;
+      }
+
+			header {
+				padding: 40px 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+			button {
+				appearance: none;
+				background-color: black;
+				border: 0;
+				border-radius: 3px;
+				cursor: pointer;
+				padding: 12px 30px;
+				color: white;
+				font-weight: bold;
+				font-size: .8em;
+				margin: 0 0 20px;
+			}
+
+			button:hover,
+			button:focus {
+				background-color:midnightblue;
+			}
+
+			section pre {
+				margin: 20px 0 !important;
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+		</style>
+		<script>
+			var dataLayer = [];
+		</script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<h1>GA Module</h1>
+        <p>A generic module which will unify GA events across your websites</p>
+        <h2>Getting started</h2>
+        <p>This example is based off the fact that you have a bundling tool for your JavaScript:</p>
+<pre class="language-javascript header-code">
+<code class="language-javascript">
+npm i ga-module -D
+</code>
+</pre>
+        <p>This module now currently has the following event tracking:</p>
+        <ul>
+          <li>Scroll tracking</li>
+          <li>Event click tracking</li>
+        </ul>
+        <p>Each one is exported on its own so when your bundle is outputted in production mode it will include only the code your bundle needs from the module.</p>
+			</div>
+		</header>
+
+		<section data-ga-category="component - section one">
+			<div>
+				<h2>This section is only used to track clicks on a component</h2>
+				<button type="button" data-ga-action="cta click" data-ga-label="cta label">Click me to fire into the dataLayer</button>
+				<p>What will happen now is that the data will be extracted from the element and an object will be constructed & sent to the dataLayer variable. You can test this by click the button and then checking the dataLayer variable in the console.</p>
+<pre class="language-markup">
+<code class="language-markup">
+&lt;section data-ga-category="component - section one">
+  &lt;div>
+    &lt;h2>This section is only used to track clicks on a component&lt;/h2>
+    &lt;button type="button" data-ga-action="cta click" data-ga-label="cta label">Click me to fire into the dataLayer&lt;/button>
+    &lt;p>What will happen now is that the data will be extracted from the element and an object will be constructed & sent to the dataLayer variable. You can test this by click the button and then checking the dataLayer variable in the console.&lt;/p>
+  &lt;/div>
+&lt;/section>
+</code>
+</pre>
+      <p>Code to do this:</p>
+<pre class="language-javascript">
+<code class="language-javascript">
+import { TrackClickEvents } from 'ga-module';
+
+TrackClickEvents();
+</code>
+</pre>
+			</div>
+		</section>
+		<section data-ga-category="component - section two" data-ga-scroll-tracking>
+			<div>
+				<h2>Tracking whether a component has been scrolled into the view</h2>
+				<p>When the user has scrolled into the middle of the component an event will fire the event. The only attribute needed for this is the <b>data-ga-category</b> attribute.</p>
+<pre class="language-markup">
+<code class="language-markup">
+&lt;section data-ga-category="component - section two" data-ga-scroll-tracking>
+  &lt;div>
+    &lt;h2>Tracking whether a component has been scrolled into the view&lt;/h2>
+    &lt;p>When the user has scrolled into the middle of the component an event will fire the event. The only attribute needed for this is the &lt;b>data-ga-category&lt;/b> attribute.&lt;/p>
+  &lt;/div>
+&lt;/section>
+</code>
+</pre>
+<p>Code to do this:</p>
+<pre class="language-javascript">
+<code class="language-javascript">
+import { TrackComponentsInView } from 'ga-module';
+
+TrackComponentsInView();
+</code>
+</pre>
+			</div>
+    </section>
+    <section data-ga-category="component - config change section" data-ga-scroll-tracking>
+      <div>
+        <h2>Changing the config</h2>
+        <p>
+          If you need to change the config its really easy to do so. all you have to do is call the <b>ConfigChange</b> function before you initialise your tracking functions. For example:
+        </p>
+<pre class="language-javascript">
+<code class="language-javascript">
+import { ConfigChange, TrackComponentsInView } from 'ga-module';
+
+const config = {
+  category: 'data-ga-category-new',
+  scroll: 'data-ga-scroll-tracking-new',
+  action: 'data-ga-action-new',
+  label: 'data-ga-label-new',
+};
+
+ConfigChange(config);
+TrackComponentsInView();
+</code>
+</pre>
+      </div>
+    </section>
+		<script src="/common.bundle.js" defer></script>
+		<script src="/prism.js" defer></script>
+	</body>
+</html>

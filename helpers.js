@@ -1,7 +1,16 @@
 // Helper.js
 // Generic functions we can reuse.
 
-export function closest(el, selector) {
+function matches(el, selector) {
+  // IE support
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector;
+  }
+
+  return el.matches(selector);
+}
+
+export default function closest(el, selector) {
   if (el.tagName === 'BODY') {
     return null;
   }

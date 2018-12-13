@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "airbnb-base"
+  ],
+  "parser": "babel-eslint",
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"rules": {
+    "no-unused-vars": "off",
+    "linebreak-style": "off",
+    "strict": "off",
+    "max-len": "off",
+    "comma-dangle": "off",
+    "no-extend-native": "off",
+    "no-plusplus": "off",
+    "no-prototype-builtins": "off",
+    "no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "no-unused-expressions": "off",
+    "operator-assignment": "off",
+    "no-restricted-globals": "off",
+    "prefer-destructuring": ["error", {
+      "array": false,
+      "object": true
+    },
+    {
+      "enforceForRenamedProperties": false
+    }],
+    "consistent-return": "off",
+    "no-console": "off"
+	},
+	"globals": {
+		"document": true,
+		"window": true,
+    "dataLayer": true,
+    "IntersectionObserver": true,
+    "Element": true,
+    "observer": true,
+    "before": true,
+    "it": true,
+    "describe": true,
+    "expect": true,
+    "cy": true
+  }
+}
