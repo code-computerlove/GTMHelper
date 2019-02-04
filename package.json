@@ -1,15 +1,19 @@
 {
-  "name": "ga-module",
+  "name": "gtm-helper",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/code-mattclaffey/ga-module#readme",
+  "homepage": "https://github.com/code-mattclaffey/GTMHelper#readme",
+  "bugs": {
+    "url": "https://github.com/code-mattclaffey/GTMHelper/issues",
+    "email": "mattclaffey93@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cypress run",
     "open-cypress": "cypress open",
     "start": "webpack",
     "serve": "localhost ./demo",
-    "deploy": "surge ./demo ga-module.surge.sh",
+    "deploy": "surge ./demo gtm-helper.surge.sh",
     "publish": "npm test && npm run webpack --prod && npm run deploy"
   },
   "keywords": [],

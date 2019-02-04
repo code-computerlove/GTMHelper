@@ -10,7 +10,7 @@
 these options can be changed to your own config if needed:
 
 ```js
-import { ConfigChange } from 'ga-module';
+import { ConfigChange } from 'gtm-helper';
 
 const config = {
   category: 'data-ga-category-new',
@@ -63,7 +63,7 @@ dataLayer.push({
 what will it do and how does it do it...
 
 ```js
-import { TrackClickEvents } from 'ga-module';
+import { TrackClickEvents } from 'gtm-helper';
 
 TrackClickEvents();// uses default config
 ```
@@ -73,7 +73,7 @@ TrackClickEvents();// uses default config
 what will it do and how does it do it...
 
 ```js
-import { TrackComponentsInView } from 'ga-module';
+import { TrackComponentsInView } from 'gtm-helper';
 
 TrackComponentsInView();
 ```

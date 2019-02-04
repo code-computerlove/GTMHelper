@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>
-			Demo
+			GTM Helper
 		</title>
 		<link rel="stylesheet" href="/prism.css" />
 		<style>
@@ -97,13 +97,13 @@
 	<body>
 		<header>
 			<div>
-				<h1>GA Module</h1>
+				<h1>GTM Helper</h1>
         <p>A generic module which will unify GA events across your websites</p>
         <h2>Getting started</h2>
         <p>This example is based off the fact that you have a bundling tool for your JavaScript:</p>
 <pre class="language-javascript header-code">
 <code class="language-javascript">
-npm i ga-module -D
+npm i gtm helper -D
 </code>
 </pre>
         <p>This module now currently has the following event tracking:</p>
@@ -134,7 +134,7 @@ npm i ga-module -D
       <p>Code to do this:</p>
 <pre class="language-javascript">
 <code class="language-javascript">
-import { TrackClickEvents } from 'ga-module';
+import { TrackClickEvents } from 'gtm-helper';
 
 TrackClickEvents();
 </code>
@@ -150,7 +150,7 @@ TrackClickEvents();
         <button type="button" data-ga-category="component - add click onto button" data-ga-action="cta click" data-ga-label="cta label">Click me to fire into the dataLayer</button>
 <pre class="language-javascript">
 <code class="language-javascript">
-import { ConfigChange, TrackComponentsInView } from 'ga-module';
+import { ConfigChange, TrackComponentsInView } from 'gtm-helper';
 
 const config = {
   category: 'data-ga-category-new',
@@ -182,7 +182,7 @@ TrackComponentsInView();
 <p>Code to do this:</p>
 <pre class="language-javascript">
 <code class="language-javascript">
-import { TrackComponentsInView } from 'ga-module';
+import { TrackComponentsInView } from 'gtm-helper';
 
 TrackComponentsInView();
 </code>
@@ -197,7 +197,7 @@ TrackComponentsInView();
         </p>
 <pre class="language-javascript">
 <code class="language-javascript">
-import { ConfigChange, TrackComponentsInView } from 'ga-module';
+import { ConfigChange, TrackComponentsInView } from 'gtm-helper';
 
 const config = {
   category: 'data-ga-category-new',
