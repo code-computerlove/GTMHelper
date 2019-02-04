@@ -77,7 +77,3 @@ import { TrackComponentsInView } from 'ga-module';
 
 TrackComponentsInView();
 ```
-
-## Troubleshooting
-
-Your babel config will need the spread-operator module: https://babeljs.io/docs/en/babel-plugin-proposal-object-rest-spread to run this module

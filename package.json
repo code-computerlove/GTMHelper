@@ -2,13 +2,15 @@
   "name": "ga-module",
   "version": "0.0.1",
   "description": "",
+  "homepage": "https://github.com/code-mattclaffey/ga-module#readme",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/cypress run",
     "open-cypress": "cypress open",
     "start": "webpack",
     "serve": "localhost ./demo",
-    "deploy": "surge ./demo ga-module.surge.sh"
+    "deploy": "surge ./demo ga-module.surge.sh",
+    "publish": "npm test && npm run webpack --prod && npm run deploy"
   },
   "keywords": [],
   "author": "Matthew Claffey",

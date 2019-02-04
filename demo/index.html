@@ -140,7 +140,31 @@ TrackClickEvents();
 </code>
 </pre>
 			</div>
-		</section>
+    </section>
+    <section>
+      <div>
+        <h2>If you want click events on the element and not the wrapper...</h2>
+        <p>
+          In IOS a drop shadow is formed around the clickable element which may break styling of the component. The data-ga-category can be added to the button/link and it will act the same way it would do with the container approach.
+        </p>
+        <button type="button" data-ga-category="component - add click onto button" data-ga-action="cta click" data-ga-label="cta label">Click me to fire into the dataLayer</button>
+<pre class="language-javascript">
+<code class="language-javascript">
+import { ConfigChange, TrackComponentsInView } from 'ga-module';
+
+const config = {
+  category: 'data-ga-category-new',
+  scroll: 'data-ga-scroll-tracking-new',
+  action: 'data-ga-action-new',
+  label: 'data-ga-label-new',
+};
+
+ConfigChange(config);
+TrackComponentsInView();
+</code>
+</pre>
+      </div>
+    </section>
 		<section data-ga-category="component - section two" data-ga-scroll-tracking>
 			<div>
 				<h2>Tracking whether a component has been scrolled into the view</h2>

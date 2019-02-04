@@ -35,7 +35,7 @@ function Bundle() {
       common: `${__dirname}/src/entry.js`,
     },
     output: {
-      path: `${__dirname}/demo`,
+      path: isProd ? `${__dirname}/dist` : `${__dirname}/demo`,
       filename: '[name].bundle.js',
     },
     module: {

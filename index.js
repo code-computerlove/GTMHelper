@@ -51,7 +51,7 @@ function checkForAction({ target, currentTarget } = {}) {
 // Event to track click events on a component
 
 export function TrackClickEvents() {
-  const components = [].slice.call(document.querySelectorAll(`[${config.category}]`));
+  const components = [...document.querySelectorAll(`[${config.category}]`)];
   components.forEach(component => component.addEventListener('click', checkForAction, true));
 }
 
@@ -80,7 +80,7 @@ export function TrackComponentsInView() {
 
   observer = new IntersectionObserver(observerCallback, observerConfig);
 
-  const components = [].slice.call(document.querySelectorAll(`[${config.scroll}]`));
+  const components = [...document.querySelectorAll(`[${config.scroll}]`)];
 
   components.forEach(element => observer.observe(element));
 }
